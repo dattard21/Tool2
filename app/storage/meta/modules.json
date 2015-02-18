@@ -1,0 +1,20 @@
+{
+    "quote": {
+        "include": [
+            "routes.php"
+        ],
+        "name": "quote",
+        "order": 0,
+        "group": "app\/modules",
+        "enabled": true
+    },
+    "quote 2": {
+        "include": [
+            "routes.php"
+        ],
+        "name": "quote 2",
+        "order": 0,
+        "group": "app\/modules",
+        "enabled": true
+    }
+}

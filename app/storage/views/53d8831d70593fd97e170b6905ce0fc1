@@ -1,0 +1,166 @@
+<?php $__env->startSection('content'); ?>
+<h1><span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size: 30px;"></span> Humans.txt Generator</h1>
+<hr color="#a1a1a1" style="border:1px solid black !important;margin-top:10px !important;"/>
+
+<!-- will be used to show any messages -->
+
+<div id='info' class="alert alert-info info">After Successfully submission of form alert info message over here....</div>
+<div class='well'>
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Legend</legend>
+            <div class="firstForm">
+                <div class="form-group">
+                    <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked> </div>
+                    <label for="inputEmail" class="col-lg-2 control-label">Your Title:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Your Name">                    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>
+                    <label for="inputEmail" class="col-lg-2 control-label">Site:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc.">                    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF"></div>
+                    <label for="inputEmail" class="col-lg-2 control-label">Twitter:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Your Twitter Username">                    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>
+                    <label for="inputEmail" class="col-lg-2 control-label">Location:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="http://testweb.com">                    
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class='col-lg-1'></div>
+                <label for="textArea" class="col-lg-2 control-label"></label>
+                <div class="col-lg-9">                    
+                    <input type='button' class='btn btn-primary add_first_form' value='Add'/>
+                </div>
+            </div>
+            <div class='secondForm'>
+                <div class="form-group">
+                    <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>
+                    <label for="inputEmail" class="col-lg-2 control-label">Name:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Name or Url">                    
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class='col-lg-1'></div>
+                <label for="textArea" class="col-lg-2 control-label"></label>
+                <div class="col-lg-9">                    
+                    <input type='button' class='btn btn-primary add_second_form' value='Add'/>
+                </div>
+            </div>            
+            <div class="form-group">
+                <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>
+                <label for="inputEmail" class="col-lg-2 control-label">Last Update:</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="YYYY/MM/DD">                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked> </div>
+                <label for="inputEmail" class="col-lg-2 control-label">Standards:</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="HTML,CSS3,..">                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>
+                <label for="inputEmail" class="col-lg-2 control-label">Components:</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Mordenizer,Jquery,etc.">                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF"></div>
+                <label for="inputEmail" class="col-lg-2 control-label">Software:</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="software used for developement">                    
+                </div>
+            </div>
+            <div class="form-group">                
+                <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="example@example.com">                    
+                </div>
+            </div>
+            <div class="form-group">                
+                <div class="col-lg-10 col-lg-offset-6">                    
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        $("[name='fname']").bootstrapSwitch();
+        $('.bootstrap-switch').css({'height': '1.7em'});
+        $('.bootstrap-switch-container').css({'width': '102px'});
+        $(document).off('click', '.add_first_form').on('click', '.add_first_form', function() {
+            $('.firstForm').append(
+                    '<div class="form-group">'
+                    + '<div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked> </div>'
+                    + '<label for="inputEmail" class="col-lg-2 control-label">Your Title:</label>'
+                    + '<div class="col-lg-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="Your Name">'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="form-group">'
+                    + '<div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>'
+                    + '<label for="inputEmail" class="col-lg-2 control-label">Site:</label>'
+                    + '<div class="col-lg-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc.">'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="form-group">'
+                    + '<div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF"></div>'
+                    + '<label for="inputEmail" class="col-lg-2 control-label">Twitter:</label>'
+                    + '<div class="col-lg-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="Your Twitter Username">                    '
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="form-group">'
+                    + '<div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>'
+                    + '<label for="inputEmail" class="col-lg-2 control-label">Location:</label>'
+                    + '<div class="col-lg-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="http://testweb.com">                    '
+                    + '</div>'
+                    + '</div>'
+                    );
+            $("[name='fname']").bootstrapSwitch();
+            $('.bootstrap-switch').css({'height': '1.7em'});
+            $('.bootstrap-switch-container').css({'width': '102px'});
+        });
+        $(document).off('click', '.add_second_form').on('click', '.add_second_form', function() {
+            $('.secondForm').append(
+                    '<div class="form-group">'
+                    + '<div class="col-lg-1"><input type="checkbox" name="fname" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></div>'
+                    + '<label for="inputEmail" class="col-lg-2 control-label">Name:</label>'
+                    + '<div class="col-lg-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="Name or Url">                    '
+                    + '</div>'
+                    + '</div>'
+                    );
+            $("[name='fname']").bootstrapSwitch();
+            $('.bootstrap-switch').css({'height': '1.7em'});
+            $('.bootstrap-switch-container').css({'width': '102px'});
+        });
+    });
+</script>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('human::layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,6 @@
+<nav class="navbar navbar-inverse" style="min-width: 1143px !important;">    
+    <div class="navbar-header" style="left:11.5%;position:absolute;">
+        <a class="navbar-brand" style="font-size:30px !important;color:#fff !important;" href="<?php echo URL::to('quote'); ?>">Humans</a>
+    </div>
+
+</nav>

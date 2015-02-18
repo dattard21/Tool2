@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Mikepa</title>
+<!--        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">        -->
+        <script src="../assets/js/jquery-2.1.1.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">                        
+
+            <div class="jumbotron text-center">
+                <h2><?php echo $task->title; ?></h2>
+                <p>                    
+                    <strong>Description:</strong> <?php echo $task->description; ?><br>
+                    <strong>Created On:</strong> <?php echo date('d-m-Y h:i A',strtotime($task->start_date)); ?>                    
+                </p>
+            </div>
+
+        </div>
+    </body>
+</html>

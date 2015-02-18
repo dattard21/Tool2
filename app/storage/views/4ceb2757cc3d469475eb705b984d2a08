@@ -1,0 +1,8 @@
+<nav class="navbar navbar-inverse" style="">    
+    <div class="navbar-header" style="width:100% !important">
+        <center>
+            <a class="" style="font-size:30px !important;color:#fff !important;" href="<?php echo URL::to('quote'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;Quote Generator</a>
+        </center>
+    </div>
+
+</nav>

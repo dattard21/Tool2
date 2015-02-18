@@ -1,0 +1,321 @@
+<?php $__env->startSection('content'); ?>
+<!-- will be used to show any messages -->
+
+<div id='info' class="alert alert-info info">After Successfully submission of form alert info message over here....</div>
+<div class='well'>
+    <form class="form-horizontal" name="quoteForm" method="post" action="<?php echo route('quoteGenerate'); ?>" enctype="multipart/form-data">
+        <fieldset>
+            <legend class="legend_custom">
+                <div class="col-lg-4 col-md-4 col-sm-4">Quote Generator</div>
+                <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8" style="margin-top:-3px;">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default currency_dollar"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-default currency_euro"><span class="glyphicon glyphicon-euro" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-default"><span class="glyphicon" aria-hidden="true">Other</span></button>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </legend>
+            <div class="firstForm">
+                <div class="form-group">
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <label class="col-lg-3 control-label">Your Address</label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <textarea class="form-control" rows="3" name='quoteCompany' id="company" placeholder="Your Address..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <label class="col-lg-3 control-label">Client Address</label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <textarea class="form-control" rows="3" name='quoteClient' placeholder="Client Address..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <label for="inputEmail" class="col-lg-3 col-sm-3 control-label">Your Logo</label>
+                        <div class="col-lg-6 col-xs-12 col-sm-9">
+                            <input type="file" style="margin-top: 5px;" name='quoteCompanyLogo' placeholder="Your Logo">                    
+                        </div>
+                    </div>                    
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name="description[0][chk]" class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" name='description[0][desc]' placeholder="Email, Link to a contact form, etc.">                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" name='description[0][hour]' id="inputEmail">
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" name='description[0][price]' style="">
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[1][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" name='description[1][desc]' id="inputEmail" placeholder="Email, Link to a contact form, etc.">                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" id="inputEmail" name='description[1][hour]' style="">
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" name='description[1][price]' style="">
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[2][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" name='description[2][desc]' placeholder="Email, Link to a contact form, etc.">                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" name='description[2][hour]' id="inputEmail" style="">
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" name='description[2][price]' style="">
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[3][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" name='description[3][desc]' placeholder="Email, Link to a contact form, etc.">                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[3][hour]'>
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[3][price]'>
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[4][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF"></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc." name='description[4][desc]'>                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[4][hour]'>
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[4][price]'>
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[5][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF"></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc." name='description[5][desc]'>                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[5][hour]'>
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[5][price]'>
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">                   
+                    <div class="col-sm-6">
+                        <label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name='description[6][chk]' class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>
+                        <div class="col-xs-11 col-lg-9 col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc." name='description[6][desc]'>                    
+                        </div>
+                    </div>                    
+                    <div class="col-sm-6">
+                        <div class="col-xs-2" style="padding-right:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[6][hour]'>
+                        </div>
+                        <div class="hours_label">
+                            <label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">
+                            <input type="number" class="form-control" id="inputEmail" style="" name='description[6][price]'>
+                        </div>                                                    
+                        <div class="col-xs-4 col-sm-3 col-md-3" style="">
+                            <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="form-group">                   
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <label for="inputEmail" class="col-sm-3 control-label">Add more line</label>
+                    <div class="col-xs-11 col-lg-9 col-sm-9">
+                        <input type='button' class='btn btn-primary add_first_form' value='Add'/>
+                    </div>
+                </div>                    
+            </div>                                    
+            <div class="form-group">                   
+                <div class="col-sm-6">
+                    <label for="inputEmail" class="col-sm-3 col-xs-2 col-lg-3 control-label"><input type="checkbox" name="freeText_chk" class='switch' data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>                    
+                    <div class="col-xs-11 col-lg-9 col-sm-9">
+                        <textarea class="form-control" rows="3" name='freeText_desc' placeholder="Other Expenses..."></textarea>
+                    </div>
+                </div>                    
+                <div class="col-sm-6" style="padding-left: 6px;">                    
+                    <div class="col-xs-2 col-lg-4 col-sm-5 col-md-4 final_quote" style="padding-right: 0;">
+                        <label for="inputEmail" class="control-label" style="float:right;">&nbsp;<span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                    </div>
+                    <div class="col-xs-2" style="padding-left:0px;">
+                        <input type="number" class="form-control" name='freeText_desc' id="inputEmail" style="">
+                    </div>                                                    
+                    <div class="col-xs-4" style="">
+                        <label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>                        
+                    </div>
+                </div>
+            </div>                                    
+            <div class="form-group">                   
+                <div class="col-xs-6">
+                    <label for="inputEmail" class="col-sm-10 control-label">Final Quote</label>                    
+                </div>                    
+                <div class="col-xs-6" style="padding-left: 6px;">                    
+                    <div class="col-xs-6" style="padding-right: 0">
+                        <label for="inputEmail" class="control-label" style="float:right;">&nbsp;<span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>                        
+                    </div>
+                    <div class="col-xs-2" style="padding-left:0px;">
+                        <input type="number" class="form-control" id="inputEmail" style="" name='finalQuote'>
+                    </div>                                                                        
+                </div>
+            </div>
+            <div class="form-group">                   
+                <div class="col-sm-6">
+                    <label for="inputEmail" class="col-sm-3 control-label"></label>
+                    <div class="col-xs-11 col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" id="inputEmail" required="required" placeholder="your@email.com">                    
+                    </div>
+                </div>                                    
+            </div>            
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <label for="inputEmail" class="col-sm-3 control-label"></label>
+                    <div class="col-xs-11 col-lg-9 col-sm-9" style="padding-right:0;">
+                        <button type="submit" class="btn btn-primary">Generate My Quote</button>
+                    </div>                    
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        
+        $('#company').focus();
+        $('.currency').addClass('glyphicon glyphicon-usd');
+        $(".switch").bootstrapSwitch();
+        $('.bootstrap-switch').css({'height': '1.7em'});
+        $('.bootstrap-switch-container').css({'width': '102px'});        
+        var i = 7;
+        $(document).off('click', '.add_first_form').on('click', '.add_first_form', function() {
+            $('.firstForm').append(
+                    '<div class="form-group">'
+                    + '<div class="col-sm-6">'
+                    + '<label for="inputEmail" class="col-sm-3 control-label"><input type="checkbox" name="description['+i+'][chk]" class="switch" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="ON" data-off-text="OFF" checked></label>'
+                    + '<div class="col-xs-11 col-lg-9 col-sm-9">'
+                    + '<input type="text" class="form-control" id="inputEmail" placeholder="Email, Link to a contact form, etc." name="description['+i+'][desc]">'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="col-sm-6">'
+                    + '<div class="col-xs-2" style="padding-right:0;">'
+                    + '<input type="number" class="form-control" id="inputEmail" style="" name="description['+i+'][hour]">'
+                    + '</div>'
+                    + '<div class="hours_label">'
+                    + '<label for="inputEmail" class="control-label" style="">hours &nbsp;&nbsp;*&nbsp;&nbsp; <span class="currency" aria-hidden="true" style="font-size: 12px;"></span></label>'
+                    + '</div>'
+                    + '<div class="col-xs-2 col-sm-2 col-md-2" style="padding-left:0;">'
+                    + '<input type="number" class="form-control" id="inputEmail" name="description['+i+'][price]">'
+                    + '</div>'
+                    + '<div class="col-xs-4 col-sm-3 col-md-3" style="">'
+                    + '<label for="inputEmail" class="control-label" style=""><span class="currency" aria-hidden="true" style="font-size: 12px;"></span>50</label>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>'
+                    );
+            if ($('.currency').hasClass('glyphicon glyphicon-euro')) {                
+                $('.currency').addClass('glyphicon glyphicon-euro');
+            } else {
+                $('.currency').addClass('glyphicon glyphicon-usd');
+            }
+            $(".switch").bootstrapSwitch();
+            $('.bootstrap-switch').css({'height': '1.7em'});
+            $('.bootstrap-switch-container').css({'width': '102px'});
+            i++;
+        });        
+        $(document).off('click', '.currency_dollar').on('click', '.currency_dollar', function() {
+            if ($('.currency').hasClass('glyphicon glyphicon-euro')) {
+                $('.currency').removeClass('glyphicon glyphicon-euro');
+                $('.currency').addClass('glyphicon glyphicon-usd');
+            } else {
+                $('.currency').addClass('glyphicon glyphicon-usd');
+            }
+        });
+        $(document).off('click', '.currency_euro').on('click', '.currency_euro', function() {
+            if ($('.currency').hasClass('glyphicon glyphicon-usd')) {
+                $('.currency').removeClass('glyphicon glyphicon-usd');
+                $('.currency').addClass('glyphicon glyphicon-euro');
+            } else {
+                $('.currency').addClass('glyphicon glyphicon-euro');
+            }
+        });
+    });
+</script>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('quote::layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,122 @@
+<html>
+    <head>
+<!--        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>-->
+    </head>
+    <body>                
+        <div style="height:auto;width: 650px;padding:20px;border:1px solid black;">
+            <div style="width:650px;">                
+                <div style="float:left;width:320px;">
+                    <div style="color:#d1d1d1;">
+                        <h1>Web Design Quotation</h1>
+                    </div>
+                    <div style="width:120px;height:100px;float:left;">
+                        <?php if(isset($image)): ?>
+                        <img src="<?php echo asset('assets/img/'.$image); ?>" height='100' width='120' alt="Company Logo"/>                        
+                        <?php endif; ?>
+                    </div>
+                    <div style="float:right;margin-right: 68px;width:120px;height:100px;">
+                        <?php echo $address ? $address : '---'; ?><br/>
+                        <?php echo $contact_email; ?><br/>
+                        <?php echo $contact_phone; ?><br/>
+                        <?php echo $web_site; ?>
+
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="float:right;width:200px;margin-right: -27%;margin-top: 3%;">
+                    <div style='color:#d1d1d1;'>
+                        Estimate: <?php echo !empty($estimate_no) ? '#'.$estimate_no : '---'; ?><br/>
+                        Date: <?php echo date('F, d Y'); ?>
+
+                    </div>
+                    <div style='width:200px;margin-top: 2%;color:#d1d1d1;'>
+                        <b><?php echo $client_name; ?>:</b><br/>
+                        <?php echo $client_address; ?>
+
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>            
+            <div style="width:650px;padding-top:20%;margin-bottom:30px;">
+                <div>
+                    <hr/>
+                    <hr size='6px' color='#d1d1d1'/>
+                </div>            
+                <div style='width:650px;margin-top: 20px;height:200px;border:1px solid black;overflow:auto;overflow: hidden;'>
+                    <div style='border-bottom: 1px solid black;width:650px;'><b>Project Description</b></div>
+                    <div>
+                        <p><?php echo $project_description; ?></p>
+                    </div>
+                </div>
+            </div>
+            <div style='width:650px;'>
+                <table border="0" cellspacing='5' cellpadding='2' width="100%">
+                    <thead>
+                        <tr>
+                            <th style='text-align: left;'>Description</th>
+                            <?php if(isset($show_working)): ?>
+                            <th style='text-align: right;'>Hours</th>
+                            <th style='text-align: right;'>Price Per Hour</th>
+                            <?php endif; ?>
+                            <th style='text-align: right;'>Total</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <?php /* */$total = 0;/* */ ?>                        
+                        <?php foreach($description as $data): ?>
+                        <?php if(isset($data['chk'])): ?>                        
+                        <tr>
+                            <td><?php echo !empty($data['desc']) ? $data['desc'] : '---'; ?></td>
+                            <?php if(isset($show_working)): ?>
+                            <td style='text-align: right;'><?php echo !empty($data['hour']) ? $data['hour'] : '---'; ?></td>
+                            <td style='text-align: right;'><?php echo !empty($data['price']) ? (isset($currency) && $currency != 'other' ? $currency : $other_currency).$data['price'] : '---'; ?></td>
+                            <?php endif; ?>
+                            <td style='text-align: right;'><?php echo !empty($data['hour']) && !empty($data['price']) ? (isset($currency) && $currency != 'other' ? $currency : $other_currency).($data['hour'] * $data['price']) : 0; ?></td>
+                        </tr>
+                        <?php /* */$total += $data['hour'] * $data['price'];/* */ ?>
+                        <?php endif; ?>                        
+                        <?php endforeach; ?>
+                        <tr><td <?php echo isset($show_working) ? 'colspan="4"' : 'colspan="2"'; ?>><hr/></td></tr>
+                        <tr>
+                            <td style='text-align: left;' <?php echo isset($show_working) ? 'colspan="3"' : ''; ?>><b>Other Expenses</b></td>
+                            <td style='text-align: right;'></td>
+                        </tr>
+                        <tr>
+                            <td <?php echo isset($show_working) ? 'colspan="3"' : ''; ?>>
+                                <div style='width:500px;text-align: justify;word-break: break-all;'>
+                                    <p>
+                                        <?php echo isset($free_text) ? $free_text : '---'; ?>
+
+                                    </p>
+                                </div>
+                            </td>
+                            <td style='text-align: right;'><?php echo isset($free_text_price) ? (isset($currency) && $currency != 'other' ? $currency : $other_currency).$free_text_price : '0'; ?></td>
+                        </tr>
+<!--                        <tr>
+                            <td colspan="3" style='text-align: right;'>Subtotal</td>
+                            <td style='text-align: right;'><?php echo $final_quote; ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style='text-align: right;'>Sales Tax</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>-->
+                        <tr>
+                            <td <?php echo isset($show_working) ? 'colspan="3"' : ''; ?> style='text-align: right;'>Total Estimated</td>
+                            <td style='text-align: right;'><?php echo (isset($currency) && $currency != 'other' ? $currency : $other_currency).($total + (isset($free_text_price) ? $free_text_price : 0)); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style='width:650px;height:200px;margin-top: 30px;'>
+                <p>
+                    Above information is not an invoice and only an estimate of services described above. This estimate is non-contractual.
+                    Describe your condition of the estimate here (i.e. what it includes, what does not, etc.)
+                    If you have any questions concerning this invoice, please get back to us using the contact details above
+                </p>
+
+                <p>Thank you for your business!</p>
+
+            </div>
+        </div>
+    </body>
+</html>

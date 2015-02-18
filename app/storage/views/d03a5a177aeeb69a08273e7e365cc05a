@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <title>Login</title>
+        <script src="../assets/js/jquery-2.1.1.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>        
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <script>
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+            window.onhashchange = function() {
+                window.location.hash = "no-back-button";
+            }
+        </script> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div id='success' class="alert alert-success" style='text-align: center;display:none;'>Registration Successfully Completed..!!</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin:25%;margin-top: 10%;margin-bottom: 0px;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Login</h3>
+                                <button style="float:right;margin-top: -20px;" data-toggle='modal' data-target='#register_modal' type="button" class="btn btn-info btn-xs">Register</button>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id='login_form'>
+                                    <?php echo Form::token(); ?>
+
+                                    <span id='wrg_pwd_error' style='color:red;'></span>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="log_eml" name='log_eml' placeholder="Enter Email Address">
+                                        <span id='log_eml_error' style='color:red;'></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="log_pwd" name='log_pwd' placeholder="Enter Password">
+                                        <span id='log_pwd_error' style='color:red;'></span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember Me
+                                        </label>
+                                        <a id="forgot_password" style="float:right;cursor: pointer;">
+                                            Forgot Password??
+                                        </a>                                                
+                                    </div>                                                
+                                    <button id='login_submit' type="button" class="btn btn-block btn-primary">Login</button>
+                                </form>
+                            </div>
+                        </div>                                                            
+                        <div id="forgot_password_div" style="display:none; width:100%;margin-bottom: 0px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Forgot Password</h3>                    
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form" id='forgot_password_form'>
+                                        <?php echo Form::token(); ?>                        
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email</label>
+                                            <input type="email" class="form-control" id="frgt_eml" name='frgt_eml' placeholder="Enter Email Address">
+                                            <span id='frgt_eml_error' style='color:red;'></span>
+                                        </div>                        
+                                        <button id='frgt_submit' type="button" class="btn btn-block btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+
+
+        <div class="modal fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Register Your Self..!!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" id='register_form'>
+                            <?php echo Form::token(); ?>
+
+                            <span id='user_ext_error' style='color:red;'></span>
+                            <div class="form-group">                                
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="reg_eml" name='reg_eml' placeholder="Enter Email Address">
+                                <span id='eml_error' style='color:red;'></span>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="reg_pwd" name='reg_pwd' placeholder="Enter Password">
+                                <span id='pwd_error' style='color:red;'></span>
+                            </div>                            
+                            <button type="button" id='register' class="btn btn-primary">Register..!!</button>
+                        </form>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    $(document).ready(function() {
+        $('#log_eml').focus();
+        $('#register').click(function() {
+            $.ajax({
+                url: '<?php echo route("register_user"); ?>',
+                type: 'post',
+                cache: false,
+                data: $('#register_form').serialize(),
+                success: function(result) {
+                    console.log(result);
+                    if (!result.success) {
+                        if (result.user_exist) {
+                            $('#user_ext_error').html(result.user_exist);
+                        }
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.reg_eml != null) {
+                                $('#eml_error').html(result.errors.reg_eml);
+                                $('#reg_eml').parent().addClass('has-error').focus();
+                            }
+                            if (result.errors.reg_pwd != null) {
+                                $('#pwd_error').html(result.errors.reg_pwd);
+                                $('#reg_pwd').parent().addClass('has-error').focus();
+                            }
+                        });
+                    } else {
+                        $('#eml_error').html('');
+                        $('#reg_eml').parent().removeClass('has-error').focus();
+                        $('#pwd_error').html('');
+                        $('#reg_pwd').parent().removeClass('has-error').focus();
+                        $('#register_modal').modal('hide');
+                        $('#success').show(1500);
+                        $('#success').hide(3500);
+                    }
+                }
+            });
+        });
+        $('#login_submit').click(function() {
+            $.ajax({
+                url: '<?php echo route("login_user"); ?>',
+                type: 'post',
+                cache: false,
+                data: $('#login_form').serialize(),
+                success: function(result) {
+                    if (!result.success) {
+                        if (result.wrong_pwd || result.wrong_user) {
+                            $('#wrg_pwd_error').html((result.wrong_pwd == null) ? result.wrong_user : result.wrong_pwd);
+                        }
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.log_eml != null) {
+                                $('#log_eml_error').html(result.errors.log_eml);
+                                $('#log_eml').parent().addClass('has-error').focus();
+                            }
+                            if (result.errors.log_pwd != null) {
+                                $('#log_pwd_error').html(result.errors.log_pwd);
+                                $('#log_pwd').parent().addClass('has-error').focus();
+                            }
+                        });
+                    }
+                    else {
+                        window.location.href = "<?php echo route('tasks'); ?>";
+                    }
+                }
+            });
+        });
+        $('#forgot_password').click(function() {
+            $('#forgot_password_div').slideToggle();
+            setTimeout(function() {
+                $('#frgt_eml').focus();
+            }, 500);
+
+        });
+
+        $('#frgt_submit').click(function() {
+            $.ajax({
+                url: '<?php echo route("forgot_password"); ?>',
+                type: 'post',
+                data: $('#forgot_password_form').serialize(),
+                beforeSend: function() {
+                    $('#frgt_submit').prop('disabled', true);
+                },
+                success: function(result) {
+                    console.log(result);
+                    if (!result.success) {
+                        if (result.wrong_user) {
+                            $('#frgt_eml_error').html(result.wrong_user);
+                            $('#frgt_submit').prop('disabled', false);
+                        }
+                    } else {
+                        $('#frgt_eml_error').html('');
+                        $('#success').html('Password reset link is sent successfully to ' + result.user.email).slideDown().slideUp(7000);
+                        $('#frgt_eml').val('').focus();
+                        $('#frgt_submit').prop('disabled', false);
+                        setTimeout(function() {
+                            $('#success').html('Registration Successfully Completed..!!');
+                        }, 5500);
+                    }
+                }
+            });
+        });
+    });
+</script>
+

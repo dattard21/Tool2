@@ -1,0 +1,115 @@
+<html>
+    <head>
+    <body>
+        <div style="border:1px solid black;height:auto;width: 968px;margin-left: 15%;padding:20px;">
+            <div style="">
+                <div style="float:left;width:450px;">
+                    <div style="color:#d1d1d1;">
+                        <h1>Web Design Quotation</h1>
+                    </div>
+                    <div style="width:200px;height:100px;float:left;">
+                        <img src="<?php echo asset('assets/img/LVAkj5_20140101_001439.jpg'); ?>" height='100' width='200'/>
+                    </div>
+                    <div style="float:left;margin-left: 10px;width:235px;height:100px;">
+                        Company Details
+                    </div>
+                </div>
+                <div style="float:right;margin-right: 20%;margin-top: 2%;">
+                    <div style='color:#d1d1d1;'>
+                        Estimate:#[100]<br/>
+                        Date:December 19,2014
+                    </div>
+                    <div style='margin-top: 15%;color:#d1d1d1;'>
+                        <b>Customer:</b><br/>
+                        Customer Details
+                    </div>
+                </div>
+                <div style="clear:both;"></div>            
+            </div>
+            <hr/>
+            <hr size='6px' color='#d1d1d1' style='margin-top: -6px;'/>
+            <div style='width:968px;margin-top: 20px;margin-bottom: 30px;height:200px;'>
+                <div style='border-bottom: 1px solid black;width:968px;'><b>Project Description</b></div>
+                <div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+            <div style=''>
+                <table border="0" cellspacing='5' cellpadding='2' width="100%">
+                    <thead>
+                        <tr>
+                            <th style='text-align: left;'>Description</th>
+                            <th style='text-align: right;'>Hours</th>
+                            <th style='text-align: right;'>Price Per Hour</th>
+                            <th style='text-align: right;'>Total</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>asdasds</td>
+                            <td style='text-align: right;'>2</td>
+                            <td style='text-align: right;'>10</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td>asdasds</td>
+                            <td style='text-align: right;'>2</td>
+                            <td style='text-align: right;'>10</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td>asdasds</td>
+                            <td style='text-align: right;'>2</td>
+                            <td style='text-align: right;'>10</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td>asdasds</td>
+                            <td style='text-align: right;'>2</td>
+                            <td style='text-align: right;'>10</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr><td colspan='4'><hr/></td></tr>
+                        <tr>
+                            <td style='text-align: left;' colspan="3"><b>Other Expenses</b></td>
+                            <td style='text-align: right;'></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div style='width:600px;text-align: justify;word-break: break-all;'>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    </p>
+                                </div>
+                            </td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style='text-align: right;'>Subtotal</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style='text-align: right;'>Sales Tax</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style='text-align: right;'>Total Estimated</td>
+                            <td style='text-align: right;'>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style='width:968px;height:200px;margin-top: 30px;'>
+                <p>
+                Above information is not an invoice and only an estimate of services described above. This estimate is non-contractual.
+                Describe your condition of the estimate here (i.e. what it includes, what does not, etc.)
+                If you have any questions concerning this invoice, please get back to us using the contact details above
+                </p>
+
+                <p>Thank you for your business!</p>
+
+            </div>
+        </div>
+    </body>
+</head>
+</html>

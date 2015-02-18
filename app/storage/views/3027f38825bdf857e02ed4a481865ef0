@@ -1,0 +1,6 @@
+<title>Human Text</title>
+<script src="<?php echo asset('assets/js/jquery-2.1.1.min.js'); ?>"></script>
+<script src="<?php echo asset('assets/js/bootstrap.min.js'); ?>"></script>
+<script src="<?php echo asset('assets/js/bootstrap-switch.js'); ?>"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="<?php echo asset('assets/css/bootstrap-switch.css'); ?>" rel="stylesheet">

@@ -1,0 +1,55 @@
+.hours_label{
+    padding-left:1px !important;
+    padding-right:1px !important;
+    text-align: center !important;
+    float:left !important;
+    position:relative !important;
+    min-height: 1px !important;    
+}
+.final_quote{
+    margin-left: 24px;
+}
+.other_currency{
+    display: none;    
+}
+.show_workings{
+    font-weight: bold;
+    margin-top: 9px;
+}
+@media (min-width:692px) and (max-width:892px){
+    .hours_label{        
+        width:27% !important;
+    }    
+    .final_quote{
+        margin-left: 14px;
+    }
+}
+@media (min-width:992px){
+    .web_site{
+        padding-right: 73px !important;
+    }
+}
+@media (min-width:893px) and (max-width:1080px){
+    .final_quote{
+        margin-left: 24px !important;
+    }
+}
+@media(min-width:1080px){
+    .final_quote{
+        margin-left: 5px;
+    }
+    .web_site{
+        padding-right: 0px !important;
+    }    
+}
+@media (min-width:297px) and (max-width:1080px) {
+    .legend_custom{
+        width:86% !important;
+    }
+}
+@media (min-width:1200px){
+    .same_line{
+        padding: 0px;
+        margin-left: -2px;
+    }
+}

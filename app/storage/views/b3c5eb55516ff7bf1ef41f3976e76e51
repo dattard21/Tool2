@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <?php echo $__env->make('human::layouts/inc.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </head>
+    <body>
+        <?php echo $__env->make('human::layouts/inc.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div id='container' class="container">           
+
+            <?php echo $__env->yieldContent('content'); ?>
+
+        </div>
+    </body>
+</html>
